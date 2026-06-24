@@ -2,107 +2,502 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Caixa Livre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Caixa Livre - Sistema para Pequenos Negócios</title>
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, Arial, sans-serif;
+}
+
 body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    background:#f5f5f5;
+background:#f4f6f8;
+color:#333;
 }
 
 header{
-    background:#143642;
-    color:white;
-    text-align:center;
-    padding:50px;
+background:linear-gradient(135deg,#17384a,#234d64);
+color:white;
+padding:60px 20px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.logo{
+max-width:180px;
+}
+
+.hero-text{
+flex:1;
+}
+
+.hero-text h1{
+font-size:52px;
+margin-bottom:15px;
+}
+
+.hero-text p{
+font-size:22px;
+line-height:1.5;
+margin-bottom:25px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 28px;
+background:#2dbf73;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+margin-right:10px;
+}
+
+.btn:hover{
+opacity:.9;
+}
+
+.hero-img{
+flex:1;
+}
+
+.hero-img img{
+width:100%;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.2);
 }
 
 section{
-    max-width:1000px;
-    margin:auto;
-    padding:30px;
+padding:70px 20px;
+}
+
+.section-title{
+text-align:center;
+font-size:38px;
+margin-bottom:50px;
+color:#17384a;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .card{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    margin-bottom:20px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
-.botao{
-    display:inline-block;
-    background:#28a745;
-    color:white;
-    text-decoration:none;
-    padding:15px 25px;
-    border-radius:8px;
-    font-weight:bold;
+.card h3{
+margin-bottom:10px;
+color:#17384a;
+}
+
+.aviso{
+background:#fff4e5;
+border-left:6px solid #ff9800;
+padding:25px;
+border-radius:10px;
+font-size:18px;
+max-width:1000px;
+margin:auto;
+}
+
+.galeria{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:20px;
+}
+
+.galeria img{
+width:100%;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.precos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.preco{
+background:white;
+padding:30px;
+text-align:center;
+border-radius:15px;
+box-shadow:0 3px 15px rgba(0,0,0,.1);
+}
+
+.preco h3{
+font-size:28px;
+color:#17384a;
+}
+
+.valor{
+font-size:42px;
+font-weight:bold;
+color:#2dbf73;
+margin:20px 0;
+}
+
+.comparativo{
+background:#17384a;
+color:white;
+padding:60px 20px;
+}
+
+.comparativo table{
+width:100%;
+max-width:900px;
+margin:auto;
+border-collapse:collapse;
+}
+
+.comparativo th,
+.comparativo td{
+padding:15px;
+border:1px solid rgba(255,255,255,.2);
+text-align:center;
+}
+
+.download{
+text-align:center;
+}
+
+.download a{
+display:inline-block;
+padding:20px 35px;
+background:#2dbf73;
+color:white;
+font-size:22px;
+font-weight:bold;
+text-decoration:none;
+border-radius:10px;
+margin-top:20px;
+}
+
+.faq{
+max-width:900px;
+margin:auto;
+}
+
+.faq-item{
+background:white;
+padding:20px;
+margin-bottom:15px;
+border-radius:10px;
 }
 
 footer{
-    background:#143642;
-    color:white;
-    text-align:center;
-    padding:30px;
+background:#17384a;
+color:white;
+padding:50px 20px;
+text-align:center;
 }
-</style>
 
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+font-size:30px;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,.3);
+}
+
+@media(max-width:768px){
+
+.hero-text h1{
+font-size:38px;
+}
+
+.hero-text p{
+font-size:18px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>CAIXA LIVRE</h1>
-    <h2>Controle completo para pequenos negócios</h2>
 
-    <p>
-        Ideal para quem NÃO precisa emitir Nota Fiscal ou Cupom Fiscal.
-    </p>
+<div class="container">
 
-    <a class="botao" href="https://wa.me/5531993436812">
-        Solicitar Demonstração
-    </a>
+<div class="hero">
+
+<div class="hero-text">
+
+<img src="logo.png" class="logo">
+
+<h1>CAIXA LIVRE</h1>
+
+<p>
+Controle completo para pequenos negócios.
+Sem mensalidade, licença vitalícia e instalação simples.
+</p>
+
+<a class="btn" href="#download">Baixar Sistema</a>
+
+<a class="btn" href="https://wa.me/5531993436812">
+WhatsApp
+</a>
+
+</div>
+
+<div class="hero-img">
+<img src="tela1.png">
+</div>
+
+</div>
+
+</div>
+
 </header>
 
 <section>
 
-<div class="card">
-<h2>Recursos</h2>
+<h2 class="section-title">Módulos do Sistema</h2>
 
-<ul>
-<li>Controle de Vendas</li>
-<li>Controle de Estoque</li>
-<li>Controle de Caixa</li>
-<li>Relatórios Completos</li>
-<li>Exportação para Excel</li>
-<li>Multiusuário em Rede</li>
-<li>Backup Integrado</li>
-</ul>
+<div class="grid">
 
-</div>
+<div class="card"><h3>💰 Caixa</h3><p>Controle diário do caixa.</p></div>
 
-<div class="card">
-<h2>Investimento</h2>
+<div class="card"><h3>🛒 Vender</h3><p>Frente de caixa rápida.</p></div>
 
-<p><b>1 Máquina:</b> R$ 499,99</p>
-<p><b>Até 3 Máquinas:</b> R$ 699,90</p>
-<p><b>Até 5 Máquinas:</b> R$ 999,90</p>
+<div class="card"><h3>📋 Orçamento</h3><p>Orçamentos e conversões.</p></div>
 
-<p>
-Pagamento único. Sem mensalidade.
-</p>
+<div class="card"><h3>📦 Estoque</h3><p>Controle completo de produtos.</p></div>
+
+<div class="card"><h3>📊 Relatórios</h3><p>Relatórios e Excel.</p></div>
+
+<div class="card"><h3>🤝 Fiado</h3><p>Controle de clientes e recebimentos.</p></div>
+
+<div class="card"><h3>👥 Usuários</h3><p>Controle de acesso.</p></div>
+
+<div class="card"><h3>💵 Sangria</h3><p>Retirada e registro de valores.</p></div>
+
+<div class="card"><h3>⚙️ Configuração</h3><p>Configurações do sistema.</p></div>
+
+<div class="card"><h3>💾 Backup</h3><p>Segurança dos dados.</p></div>
 
 </div>
 
-<div class="card">
-<h2>Contabilidade Simplificada</h2>
+</section>
+
+<section>
+
+<h2 class="section-title">Ideal Para</h2>
+
+<div class="grid">
+
+<div class="card">🏪 Mercearias</div>
+<div class="card">🔌 Materiais Elétricos</div>
+<div class="card">🔩 Ferragens</div>
+<div class="card">🧵 Armarinhos</div>
+<div class="card">📦 Distribuidoras</div>
+<div class="card">🏬 Pequenos Comércios</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="aviso">
+
+<h3>⚠️ Importante</h3>
+
+<br>
+
+Este sistema é destinado ao controle interno da empresa.
+
+<br><br>
+
+❌ Não emite Nota Fiscal
+
+<br>
+
+❌ Não emite NFC-e
+
+<br>
+
+❌ Não emite Cupom Fiscal
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Telas do Sistema</h2>
+
+<div class="galeria">
+
+<img src="tela1.png">
+<img src="tela2.png">
+<img src="tela3.png">
+<img src="tela4.png">
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Licença Vitalícia</h2>
+
+<div class="precos">
+
+<div class="preco">
+
+<h3>1 Máquina</h3>
+
+<div class="valor">
+R$ 499,99
+</div>
+
+Pagamento único.
+
+</div>
+
+<div class="preco">
+
+<h3>Até 3 Máquinas</h3>
+
+<div class="valor">
+R$ 699,90
+</div>
+
+Pagamento único.
+
+</div>
+
+<div class="preco">
+
+<h3>Até 5 Máquinas</h3>
+
+<div class="valor">
+R$ 999,90
+</div>
+
+Pagamento único.
+
+</div>
+
+</div>
+
+</section>
+
+<section class="comparativo">
+
+<h2 class="section-title" style="color:white;">
+Comparação
+</h2>
+
+<table>
+
+<tr>
+<th>Outros Sistemas</th>
+<th>Caixa Livre</th>
+</tr>
+
+<tr>
+<td>R$79,90/mês</td>
+<td>Pagamento Único</td>
+</tr>
+
+<tr>
+<td>R$958,80 por ano</td>
+<td>Sem mensalidade</td>
+</tr>
+
+<tr>
+<td>Cobrança contínua</td>
+<td>Licença Vitalícia</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="download" class="download">
+
+<h2 class="section-title">
+Download
+</h2>
 
 <p>
-Exporte relatórios com total vendido e formas de pagamento para envio ao contador.
+Baixe a versão mais recente do Caixa Livre.
 </p>
+
+<a href="downloads/CaixaLivre_Instalador.exe">
+📥 BAIXAR AGORA
+</a>
+
+</section>
+
+<section>
+
+<h2 class="section-title">
+Perguntas Frequentes
+</h2>
+
+<div class="faq">
+
+<div class="faq-item">
+<b>O sistema emite Nota Fiscal?</b><br>
+Não.
+</div>
+
+<div class="faq-item">
+<b>Tem mensalidade?</b><br>
+Não. Licença vitalícia.
+</div>
+
+<div class="faq-item">
+<b>Funciona em rede?</b><br>
+Sim.
+</div>
+
+<div class="faq-item">
+<b>Possui backup?</b><br>
+Sim.
+</div>
+
+<div class="faq-item">
+<b>Possui controle de fiado?</b><br>
+Sim.
+</div>
 
 </div>
 
@@ -110,13 +505,26 @@ Exporte relatórios com total vendido e formas de pagamento para envio ao contad
 
 <footer>
 
-<h3>CAIXA LIVRE</h3>
+<h2>Caixa Livre</h2>
 
-<p>WhatsApp: (31) 99343-6812</p>
+<br>
 
-<p>caixalivre.github.io</p>
+<p>
+WhatsApp: (31) 99343-6812
+</p>
+
+<br>
+
+<p>
+© 2026 Caixa Livre
+</p>
 
 </footer>
+
+<a class="whatsapp"
+href="https://wa.me/5531993436812">
+📱
+</a>
 
 </body>
 </html>
