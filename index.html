@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caixa Livre | Sistema para Pequenos Negócios</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+body{background:#f4f6f9;color:#333;line-height:1.6}
+.container{max-width:1200px;margin:auto;padding:0 20px}
+header{background:linear-gradient(135deg,#123748,#1d5068);color:#fff;padding:80px 20px}
+.hero{display:flex;align-items:center;justify-content:space-between;gap:50px;flex-wrap:wrap}
+.logo{width:180px;margin-bottom:20px}
+.hero-text{flex:1;min-width:300px}
+.hero-text h1{font-size:58px;margin-bottom:20px}
+.hero-text p{font-size:22px;margin-bottom:15px}
+.hero-image{flex:1;min-width:300px}
+.hero-image img{width:100%;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.btn{display:inline-block;padding:15px 30px;background:#2ecc71;color:#fff;text-decoration:none;font-weight:bold;border-radius:8px;margin-right:10px;margin-top:10px}
+section{padding:70px 20px}
+.section-title{text-align:center;font-size:40px;margin-bottom:40px;color:#123748}
+.cards,.precos,.galeria{display:grid;gap:25px}
+.cards{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.galeria{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card,.preco,.faq-item{background:#fff;padding:25px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.08)}
+.galeria img{width:100%;border-radius:12px}
+.alerta{background:#fff3cd;border-left:6px solid #ff9800;padding:25px;border-radius:10px;max-width:1000px;margin:auto}
+.precos{grid-template-columns:1fr;max-width:500px;margin:auto}
+.valor{font-size:42px;font-weight:bold;color:#2ecc71;margin:20px 0}
+.comparacao{background:#123748;color:#fff}
+.comparacao table{width:100%;max-width:900px;margin:auto;border-collapse:collapse}
+.comparacao td,.comparacao th{padding:15px;border:1px solid rgba(255,255,255,.2)}
+.download{text-align:center}
+.download-btn{display:inline-block;background:#2ecc71;color:#fff;padding:20px 40px;border-radius:10px;font-size:22px;text-decoration:none}
+.faq{max-width:900px;margin:auto}
+footer{background:#123748;color:#fff;padding:50px 20px;text-align:center}
+.whatsapp{position:fixed;bottom:20px;right:20px;width:70px;height:70px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:30px}
+</style>
+</head>
+<body>
+<header><div class="container"><div class="hero">
+<div class="hero-text">
+<img src="logo.png" class="logo">
+<h1>CAIXA LIVRE</h1>
+<p>Sistema de Gestão para Pequenos Negócios.</p>
+<p>Controle de Caixa, Vendas, Orçamentos, Estoque, Fiado, Contas a Receber, Contas a Pagar e Relatórios.</p>
+<p>Sem mensalidade • Licença Vitalícia • Rede Local • Backup Integrado</p>
+<a href="#download" class="btn">📥 Baixar Sistema</a>
+<a href="https://wa.me/5531993436812" class="btn">💬 WhatsApp</a>
+</div>
+<div class="hero-image"><img src="tela1.png"></div>
+</div></div></header>
+
+<section><div class="alerta">
+<h2>⚠️ Importante</h2>
+<p>Destinado ao controle interno da empresa.</p>
+<p>❌ Não emite Nota Fiscal • ❌ NFC-e • ❌ Cupom Fiscal</p>
+</div></section>
+
+<section><h2 class="section-title">Módulos do Sistema</h2>
+<div class="cards">
+<div class="card">💰 Caixa</div><div class="card">🛒 Vender</div><div class="card">📋 Orçamento</div>
+<div class="card">📦 Estoque</div><div class="card">📊 Relatórios</div><div class="card">🤝 Fiado</div>
+<div class="card">👥 Usuários</div><div class="card">💵 Sangria</div><div class="card">⚙️ Configuração</div>
+<div class="card">💾 Backup</div>
+</div></section>
+
+<section><h2 class="section-title">Conheça o Sistema</h2>
+<div class="galeria">
+<img src="tela1.png"><img src="tela2.png"><img src="tela3.png"><img src="tela4.png"><img src="tela5.png">
+<img src="tela6.png"><img src="tela7.png"><img src="tela8.png"><img src="tela9.png"><img src="tela10.png"><img src="tela11.png">
+</div></section>
+
+<section><h2 class="section-title">Licença Vitalícia</h2>
+<div class="precos"><div class="preco">
+<h3>Licença Completa</h3>
+<div class="valor">R$ 499,99</div>
+<p>Pagamento único</p>
+<p>✔ Sem mensalidade</p>
+<p>✔ Licença vitalícia</p>
+<p>✔ Funciona em rede local</p>
+<p>✔ Pode ser utilizado em mais de um computador na mesma rede</p>
+<p>✔ Backup integrado</p>
+</div></div></section>
+
+<section class="comparacao">
+<h2 class="section-title" style="color:white">Economize Todos os Anos</h2>
+<table>
+<tr><th>Outros Sistemas</th><th>Caixa Livre</th></tr>
+<tr><td>R$79,90 por mês</td><td>Pagamento Único</td></tr>
+<tr><td>R$958,80 por ano</td><td>Sem Mensalidade</td></tr>
+<tr><td>Cobrança contínua</td><td>Licença Vitalícia</td></tr>
+</table>
+</section>
+
+<section id="download" class="download">
+<h2 class="section-title">Download</h2>
+<p>Baixe a versão mais recente do Caixa Livre.</p>
+<a class="download-btn" href="downloads/CaixaLivre_Instalador.exe">📥 BAIXAR CAIXA LIVRE</a>
+<p style="margin-top:15px">Senha inicial de acesso: <b>123456</b></p>
+</section>
+
+<section>
+<h2 class="section-title">Primeiro Acesso</h2>
+<div class="faq">
+<div class="faq-item">
+<b>Senha inicial do sistema:</b> 123456<br>
+Recomendamos alterar a senha após o primeiro acesso.
+</div>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Perguntas Frequentes</h2>
+<div class="faq">
+<div class="faq-item"><b>Tem mensalidade?</b><br>Não. Licença vitalícia.</div>
+<div class="faq-item"><b>Posso usar em mais de um computador?</b><br>Sim, na mesma rede local.</div>
+<div class="faq-item"><b>Preciso instalar PostgreSQL?</b><br>Não.</div>
+<div class="faq-item"><b>Possui controle de fiado?</b><br>Sim.</div>
+<div class="faq-item"><b>Possui contas a receber e pagar?</b><br>Sim.</div>
+</div>
+</section>
+
+<footer>
+<h2>CAIXA LIVRE</h2>
+<p>WhatsApp: (31) 99343-6812</p>
+<p>Licença Vitalícia • Sem Mensalidade</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/5531993436812">📱</a>
+</body>
+</html>
