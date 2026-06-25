@@ -7,6 +7,15 @@
 
 <title>Caixa Livre | Sistema para Pequenos Negócios</title>
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFCYVBVTQQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TFCYVBVTQQ');
+</script>
+
 <style>
 
 *{
@@ -357,7 +366,8 @@ Controle de Caixa, Vendas, Orçamentos, Estoque, Fiado, Financeiro e Relatórios
 
 <a href="#download" class="btn">📥 Baixar Sistema</a>
 
-<a href="https://wa.me/5531993436812" class="btn">
+<a href="https://wa.me/5531993436812" class="btn"
+   onclick="gtag('event', 'click', {event_category: 'WhatsApp', event_label: 'Botão Header'})">
 💬 WhatsApp
 </a>
 
@@ -587,7 +597,8 @@ Baixe a versão mais recente do Caixa Livre.
 </p>
 
 <a class="download-btn"
-href="downloads/CaixaLivre_Instalador.exe">
+href="downloads/CaixaLivre_Instalador.exe"
+onclick="gtag('event', 'click', {event_category: 'Download', event_label: 'Instalador'})">
 
 📥 BAIXAR CAIXA LIVRE
 
@@ -657,7 +668,8 @@ Sim.
 </footer>
 
 <a class="whatsapp"
-href="https://wa.me/5531993436812">
+href="https://wa.me/5531993436812"
+onclick="gtag('event', 'click', {event_category: 'WhatsApp', event_label: 'Botão Fixo'})">
 📱
 </a>
 
