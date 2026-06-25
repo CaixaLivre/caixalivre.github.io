@@ -1,132 +1,665 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Caixa Livre | Sistema para Pequenos Negócios</title>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
-body{background:#f4f6f9;color:#333;line-height:1.6}
-.container{max-width:1200px;margin:auto;padding:0 20px}
-header{background:linear-gradient(135deg,#123748,#1d5068);color:#fff;padding:80px 20px}
-.hero{display:flex;align-items:center;justify-content:space-between;gap:50px;flex-wrap:wrap}
-.logo{width:180px;margin-bottom:20px}
-.hero-text{flex:1;min-width:300px}
-.hero-text h1{font-size:58px;margin-bottom:20px}
-.hero-text p{font-size:22px;margin-bottom:15px}
-.hero-image{flex:1;min-width:300px}
-.hero-image img{width:100%;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
-.btn{display:inline-block;padding:15px 30px;background:#2ecc71;color:#fff;text-decoration:none;font-weight:bold;border-radius:8px;margin-right:10px;margin-top:10px}
-section{padding:70px 20px}
-.section-title{text-align:center;font-size:40px;margin-bottom:40px;color:#123748}
-.cards,.precos,.galeria{display:grid;gap:25px}
-.cards{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.galeria{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-.card,.preco,.faq-item{background:#fff;padding:25px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.08)}
-.galeria img{width:100%;border-radius:12px}
-.alerta{background:#fff3cd;border-left:6px solid #ff9800;padding:25px;border-radius:10px;max-width:1000px;margin:auto}
-.precos{grid-template-columns:1fr;max-width:500px;margin:auto}
-.valor{font-size:42px;font-weight:bold;color:#2ecc71;margin:20px 0}
-.comparacao{background:#123748;color:#fff}
-.comparacao table{width:100%;max-width:900px;margin:auto;border-collapse:collapse}
-.comparacao td,.comparacao th{padding:15px;border:1px solid rgba(255,255,255,.2)}
-.download{text-align:center}
-.download-btn{display:inline-block;background:#2ecc71;color:#fff;padding:20px 40px;border-radius:10px;font-size:22px;text-decoration:none}
-.faq{max-width:900px;margin:auto}
-footer{background:#123748;color:#fff;padding:50px 20px;text-align:center}
-.whatsapp{position:fixed;bottom:20px;right:20px;width:70px;height:70px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:30px}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f6f9;
+color:#333;
+line-height:1.6;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+header{
+background:linear-gradient(135deg,#123748,#1d5068);
+color:white;
+padding:80px 20px;
+}
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:50px;
+flex-wrap:wrap;
+}
+
+.logo{
+width:180px;
+margin-bottom:20px;
+}
+
+.hero-text{
+flex:1;
+min-width:300px;
+}
+
+.hero-text h1{
+font-size:58px;
+margin-bottom:20px;
+}
+
+.hero-text p{
+font-size:22px;
+margin-bottom:25px;
+}
+
+.hero-image{
+flex:1;
+min-width:300px;
+}
+
+.hero-image img{
+width:100%;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.btn{
+display:inline-block;
+padding:15px 30px;
+background:#2ecc71;
+color:white;
+text-decoration:none;
+font-weight:bold;
+border-radius:8px;
+margin-right:10px;
+margin-top:10px;
+}
+
+.btn:hover{
+opacity:.9;
+}
+
+section{
+padding:70px 20px;
+}
+
+.section-title{
+text-align:center;
+font-size:40px;
+margin-bottom:40px;
+color:#123748;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.card h3{
+margin-bottom:10px;
+color:#123748;
+}
+
+.alerta{
+background:#fff3cd;
+border-left:6px solid #ff9800;
+padding:25px;
+border-radius:10px;
+max-width:1000px;
+margin:auto;
+font-size:18px;
+}
+
+.info-box{
+background:#e8f5e9;
+border-left:6px solid #2ecc71;
+padding:25px;
+border-radius:10px;
+max-width:1000px;
+margin:30px auto 0;
+font-size:18px;
+}
+
+.info-box h2{
+color:#1a7a3f;
+margin-bottom:12px;
+}
+
+.galeria{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.galeria img{
+width:100%;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,.15);
+transition:.3s;
+}
+
+.galeria img:hover{
+transform:scale(1.03);
+}
+
+.preco-unico-wrapper{
+display:flex;
+justify-content:center;
+}
+
+.preco-unico{
+background:white;
+padding:40px 60px;
+text-align:center;
+border-radius:20px;
+box-shadow:0 8px 30px rgba(0,0,0,.12);
+max-width:440px;
+width:100%;
+}
+
+.preco-unico h3{
+font-size:26px;
+color:#123748;
+margin-bottom:6px;
+}
+
+.preco-unico .subtitulo{
+font-size:15px;
+color:#666;
+margin-bottom:10px;
+}
+
+.valor{
+font-size:52px;
+font-weight:bold;
+color:#2ecc71;
+margin:20px 0;
+}
+
+.preco-unico .tag-rede{
+display:inline-block;
+background:#e8f5e9;
+color:#1a7a3f;
+font-weight:600;
+font-size:15px;
+padding:8px 18px;
+border-radius:20px;
+margin-bottom:16px;
+}
+
+.preco-unico p{
+font-size:15px;
+color:#444;
+margin-bottom:10px;
+}
+
+.preco-unico .obs{
+font-size:13px;
+color:#888;
+margin-top:10px;
+}
+
+.senha-box{
+background:#eef4ff;
+border-left:6px solid #3a7bd5;
+padding:25px;
+border-radius:10px;
+max-width:1000px;
+margin:40px auto 0;
+font-size:18px;
+}
+
+.senha-box h2{
+color:#1a4a9e;
+margin-bottom:12px;
+}
+
+.senha-codigo{
+display:inline-block;
+background:#3a7bd5;
+color:white;
+font-size:28px;
+font-weight:bold;
+letter-spacing:10px;
+padding:10px 30px;
+border-radius:10px;
+margin:10px 0;
+font-family:'Courier New',monospace;
+}
+
+.comparacao{
+background:#123748;
+color:white;
+}
+
+.comparacao table{
+width:100%;
+max-width:900px;
+margin:auto;
+border-collapse:collapse;
+}
+
+.comparacao th,
+.comparacao td{
+padding:15px;
+border:1px solid rgba(255,255,255,.2);
+text-align:center;
+}
+
+.download{
+text-align:center;
+}
+
+.download-btn{
+display:inline-block;
+background:#2ecc71;
+color:white;
+padding:20px 40px;
+border-radius:10px;
+font-size:22px;
+font-weight:bold;
+text-decoration:none;
+margin-top:20px;
+}
+
+.faq{
+max-width:900px;
+margin:auto;
+}
+
+.faq-item{
+background:white;
+padding:20px;
+margin-bottom:15px;
+border-radius:10px;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+footer{
+background:#123748;
+color:white;
+padding:50px 20px;
+text-align:center;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+width:70px;
+height:70px;
+background:#25D366;
+color:white;
+font-size:30px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,.3);
+}
+
+@media(max-width:768px){
+
+.hero-text h1{
+font-size:40px;
+}
+
+.hero-text p{
+font-size:18px;
+}
+
+.preco-unico{
+padding:30px 25px;
+}
+
+}
+
 </style>
 </head>
+
 <body>
-<header><div class="container"><div class="hero">
+
+<header>
+
+<div class="container">
+
+<div class="hero">
+
 <div class="hero-text">
+
 <img src="logo.png" class="logo">
+
 <h1>CAIXA LIVRE</h1>
-<p>Sistema de Gestão para Pequenos Negócios.</p>
-<p>Controle de Caixa, Vendas, Orçamentos, Estoque, Fiado, Contas a Receber, Contas a Pagar e Relatórios.</p>
-<p>Sem mensalidade • Licença Vitalícia • Rede Local • Backup Integrado</p>
+
+<p>
+Sistema de Gestão para Pequenos Negócios.
+Controle de Caixa, Vendas, Orçamentos, Estoque, Fiado, Financeiro e Relatórios.
+</p>
+
 <a href="#download" class="btn">📥 Baixar Sistema</a>
-<a href="https://wa.me/5531993436812" class="btn">💬 WhatsApp</a>
+
+<a href="https://wa.me/5531993436812" class="btn">
+💬 WhatsApp
+</a>
+
 </div>
-<div class="hero-image"><img src="tela1.png"></div>
-</div></div></header>
 
-<section><div class="alerta">
+<div class="hero-image">
+<img src="tela1.png">
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<section>
+
+<div class="alerta">
+
 <h2>⚠️ Importante</h2>
-<p>Destinado ao controle interno da empresa.</p>
-<p>❌ Não emite Nota Fiscal • ❌ NFC-e • ❌ Cupom Fiscal</p>
-</div></section>
 
-<section><h2 class="section-title">Módulos do Sistema</h2>
+<br>
+
+Este sistema é destinado ao controle interno da empresa.
+
+<br><br>
+
+❌ Não emite Nota Fiscal
+
+<br>
+
+❌ Não emite NFC-e
+
+<br>
+
+❌ Não emite Cupom Fiscal
+
+<br><br>
+
+Ideal para empresas que precisam controlar vendas, estoque, caixa, fiado e relatórios.
+
+</div>
+
+<div class="info-box">
+
+<h2>🖥️ Funciona em Rede Local</h2>
+
+<p>
+Uma única licença permite o uso em <strong>vários computadores conectados na mesma rede local</strong>.
+Ideal para estabelecimentos com mais de um caixa ou terminal de atendimento.
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Módulos do Sistema</h2>
+
 <div class="cards">
-<div class="card">💰 Caixa</div><div class="card">🛒 Vender</div><div class="card">📋 Orçamento</div>
-<div class="card">📦 Estoque</div><div class="card">📊 Relatórios</div><div class="card">🤝 Fiado</div>
-<div class="card">👥 Usuários</div><div class="card">💵 Sangria</div><div class="card">⚙️ Configuração</div>
-<div class="card">💾 Backup</div>
-</div></section>
 
-<section><h2 class="section-title">Conheça o Sistema</h2>
+<div class="card"><h3>💰 Caixa</h3></div>
+<div class="card"><h3>🛒 Vender</h3></div>
+<div class="card"><h3>📋 Orçamento</h3></div>
+<div class="card"><h3>📦 Estoque</h3></div>
+<div class="card"><h3>📊 Relatórios</h3></div>
+<div class="card"><h3>🤝 Fiado</h3></div>
+<div class="card"><h3>👥 Usuários</h3></div>
+<div class="card"><h3>💵 Sangria</h3></div>
+<div class="card"><h3>⚙️ Configuração</h3></div>
+<div class="card"><h3>💾 Backup</h3></div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Diferenciais</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>💰 Sem Mensalidade</h3>
+<p>Pagamento único e licença vitalícia.</p>
+</div>
+
+<div class="card">
+<h3>⚡ Instalação Simples</h3>
+<p>Apenas executar o instalador.</p>
+</div>
+
+<div class="card">
+<h3>📡 Rede Local</h3>
+<p>Vários computadores conectados com uma única licença.</p>
+</div>
+
+<div class="card">
+<h3>💾 Backup Integrado</h3>
+<p>Proteção dos dados da empresa.</p>
+</div>
+
+<div class="card">
+<h3>📊 Excel</h3>
+<p>Exportação de relatórios.</p>
+</div>
+
+<div class="card">
+<h3>🤝 Controle de Fiado</h3>
+<p>Clientes e recebimentos.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Conheça o Sistema</h2>
+
 <div class="galeria">
-<img src="tela1.png"><img src="tela2.png"><img src="tela3.png"><img src="tela4.png"><img src="tela5.png">
-<img src="tela6.png"><img src="tela7.png"><img src="tela8.png"><img src="tela9.png"><img src="tela10.png"><img src="tela11.png">
-</div></section>
 
-<section><h2 class="section-title">Licença Vitalícia</h2>
-<div class="precos"><div class="preco">
+<img src="tela1.png">
+<img src="tela2.png">
+<img src="tela3.png">
+<img src="tela4.png">
+<img src="tela5.png">
+<img src="tela6.png">
+<img src="tela7.png">
+<img src="tela8.png">
+<img src="tela9.png">
+<img src="tela10.png">
+<img src="tela11.png">
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Licença Vitalícia</h2>
+
+<div class="preco-unico-wrapper">
+
+<div class="preco-unico">
+
 <h3>Licença Completa</h3>
-<div class="valor">R$ 499,99</div>
-<p>Pagamento único</p>
-<p>✔ Sem mensalidade</p>
-<p>✔ Licença vitalícia</p>
-<p>✔ Funciona em rede local</p>
-<p>✔ Pode ser utilizado em mais de um computador na mesma rede</p>
-<p>✔ Backup integrado</p>
-</div></div></section>
+<p class="subtitulo">Pagamento único — sem mensalidade</p>
+
+<div class="valor">R$499,99</div>
+
+<span class="tag-rede">📡 Rede local inclusa sem custo adicional</span>
+
+<p>
+Conecte <strong>quantos computadores quiser</strong> na mesma rede local.
+Perfeito para múltiplos caixas e terminais no mesmo estabelecimento.
+</p>
+
+<p class="obs">Licença vitalícia • Suporte via WhatsApp</p>
+
+</div>
+
+</div>
+
+<div class="senha-box">
+
+<h2>🔐 Primeiro Acesso ao Sistema</h2>
+
+<p>
+Ao abrir o Caixa Livre pela primeira vez, será solicitada uma senha de 6 dígitos.
+<br>A senha padrão inicial é:
+</p>
+
+<div style="text-align:center;margin:15px 0;">
+<span class="senha-codigo">123456</span>
+</div>
+
+<p style="font-size:15px;color:#444;">
+💡 Recomendamos alterar a senha após o primeiro acesso nas <strong>Configurações</strong> do sistema.
+</p>
+
+</div>
+
+</section>
 
 <section class="comparacao">
-<h2 class="section-title" style="color:white">Economize Todos os Anos</h2>
+
+<h2 class="section-title" style="color:white;">
+Economize Todos os Anos
+</h2>
+
 <table>
-<tr><th>Outros Sistemas</th><th>Caixa Livre</th></tr>
-<tr><td>R$79,90 por mês</td><td>Pagamento Único</td></tr>
-<tr><td>R$958,80 por ano</td><td>Sem Mensalidade</td></tr>
-<tr><td>Cobrança contínua</td><td>Licença Vitalícia</td></tr>
+
+<tr>
+<th>Outros Sistemas</th>
+<th>Caixa Livre</th>
+</tr>
+
+<tr>
+<td>R$79,90 por mês</td>
+<td>Pagamento Único</td>
+</tr>
+
+<tr>
+<td>R$958,80 por ano</td>
+<td>Sem Mensalidade</td>
+</tr>
+
+<tr>
+<td>Cobrança contínua</td>
+<td>Licença Vitalícia</td>
+</tr>
+
 </table>
+
 </section>
 
 <section id="download" class="download">
-<h2 class="section-title">Download</h2>
-<p>Baixe a versão mais recente do Caixa Livre.</p>
-<a class="download-btn" href="downloads/CaixaLivre_Instalador.exe">📥 BAIXAR CAIXA LIVRE</a>
-<p style="margin-top:15px">Senha inicial de acesso: <b>123456</b></p>
+
+<h2 class="section-title">
+Download
+</h2>
+
+<p>
+Baixe a versão mais recente do Caixa Livre.
+</p>
+
+<a class="download-btn"
+href="downloads/CaixaLivre_Instalador.exe">
+
+📥 BAIXAR CAIXA LIVRE
+
+</a>
+
 </section>
 
 <section>
-<h2 class="section-title">Primeiro Acesso</h2>
+
+<h2 class="section-title">
+Perguntas Frequentes
+</h2>
+
 <div class="faq">
+
 <div class="faq-item">
-<b>Senha inicial do sistema:</b> 123456<br>
-Recomendamos alterar a senha após o primeiro acesso.
+<b>O sistema emite Nota Fiscal?</b><br>
+Não.
 </div>
-</div>
-</section>
 
-<section>
-<h2 class="section-title">Perguntas Frequentes</h2>
-<div class="faq">
-<div class="faq-item"><b>Tem mensalidade?</b><br>Não. Licença vitalícia.</div>
-<div class="faq-item"><b>Posso usar em mais de um computador?</b><br>Sim, na mesma rede local.</div>
-<div class="faq-item"><b>Preciso instalar PostgreSQL?</b><br>Não.</div>
-<div class="faq-item"><b>Possui controle de fiado?</b><br>Sim.</div>
-<div class="faq-item"><b>Possui contas a receber e pagar?</b><br>Sim.</div>
+<div class="faq-item">
+<b>Tem mensalidade?</b><br>
+Não. Licença vitalícia com pagamento único.
 </div>
+
+<div class="faq-item">
+<b>Funciona em rede?</b><br>
+Sim. Uma licença permite uso em vários computadores na mesma rede local, sem custo adicional.
+</div>
+
+<div class="faq-item">
+<b>Qual a senha para abrir o sistema?</b><br>
+A senha padrão de primeiro acesso é <strong>123456</strong>. Recomendamos alterar nas Configurações após instalar.
+</div>
+
+<div class="faq-item">
+<b>Possui controle de fiado?</b><br>
+Sim.
+</div>
+
+<div class="faq-item">
+<b>Possui contas a receber e pagar?</b><br>
+Sim.
+</div>
+
+<div class="faq-item">
+<b>Possui backup?</b><br>
+Sim.
+</div>
+
+</div>
+
 </section>
 
 <footer>
+
 <h2>CAIXA LIVRE</h2>
+
+<br>
+
 <p>WhatsApp: (31) 99343-6812</p>
-<p>Licença Vitalícia • Sem Mensalidade</p>
+
+<p>Licença Vitalícia • Sem Mensalidade • Rede Local Inclusa</p>
+
+<p>© 2026 Caixa Livre</p>
+
 </footer>
 
-<a class="whatsapp" href="https://wa.me/5531993436812">📱</a>
+<a class="whatsapp"
+href="https://wa.me/5531993436812">
+📱
+</a>
+
 </body>
 </html>
